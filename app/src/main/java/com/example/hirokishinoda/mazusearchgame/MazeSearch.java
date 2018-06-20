@@ -22,4 +22,5 @@ public class MazeSearch extends AppCompatActivity {
         Button up_button = (Button)findViewById(R.id.button_up);
         Button down_button = (Button)findViewById(R.id.button_down);
     }
+    
 }
