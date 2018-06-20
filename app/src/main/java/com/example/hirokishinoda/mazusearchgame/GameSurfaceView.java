@@ -32,6 +32,7 @@ public class GameSurfaceView  implements SurfaceHolder.Callback,Runnable{
         thread = null;
     }
 
+    
     @Override
     public void run() {
         while(thread != null){
