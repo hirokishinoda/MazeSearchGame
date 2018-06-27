@@ -3,31 +3,28 @@ package com.example.hirokishinoda.mazusearchgame;
 import android.graphics.Canvas;
 import android.graphics.Color;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class GameManager {
-
-
-        private LinkedList<Task> _taskList = new LinkedList<Task>(); //タスクリスト
+        Player player;
+        Stage stage;
+        //private int stage_level;
 
         GameManager(){
-            _taskList.add(new MazeMap(41,41));
+            player = new Player();
+            stage = new Stage(player,0);
         }
 
-        public boolean onUpdate() {
-            for(int i=0; i<_taskList.size(); i++){
-                if(_taskList.get(i).onUpdate() == false){ //更新失敗なら
-                    _taskList.remove(i);              //そのタスクを消す
-                    i--;
-                }
-            }
+        public boolean onUpdate(int x,int y) {
+            stage.onUpdate();
             return true;
         }
 
         public void onDraw(Canvas c) {
             c.drawColor(Color.WHITE);       //白で塗りつぶす
-            for (int i = 0; i < _taskList.size(); i++) {
-                _taskList.get(i).onDraw(c);//描画
-            }
+            stage.onDraw(c);
         }
 }
