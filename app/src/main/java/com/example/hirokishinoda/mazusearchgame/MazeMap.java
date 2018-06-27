@@ -1,6 +1,7 @@
 package com.example.hirokishinoda.mazusearchgame;
 
 import android.graphics.Canvas;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -17,10 +18,10 @@ public class MazeMap extends Task{
         this.map_y = map_y;
         maze_map = new Block[map_y][map_x];
 
-        setMazeMap();
+        initMazeMap();
     }
 
-    private void setMazeMap(){
+    private void initMazeMap(){
         Random rnd = new Random();
 
         for(int i = 0;i < map_y;i++){
@@ -78,7 +79,6 @@ public class MazeMap extends Task{
                 }
             }
         }
-
         setPosition();
     }
 
