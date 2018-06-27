@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">MazuSearchGame</string>
+    <string name="app_name">MazeSearchGame</string>
     <string name="button">Button</string>
-    
 </resources>
