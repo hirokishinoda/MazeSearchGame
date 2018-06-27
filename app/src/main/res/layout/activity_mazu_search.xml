@@ -4,43 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MazeSearch">
-    
+    tools:context=".MazeSearch"
+    tools:layout_editor_absoluteY="25dp">
 
- <LinearLayout
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:orientation="vertical">
 
-  <SurfaceView
-      android:id="@+id/SV"
-      android:layout_width="wrap_content"
-      android:layout_height="400dp"></SurfaceView>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
-  <Button
-      android:id="@+id/button_right"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Right" />
+        <SurfaceView
+            android:id="@+id/SV"
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></SurfaceView>
 
-  <Button
-      android:id="@+id/button_left"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="LEFT" />
+        <Button
+            android:id="@+id/button_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Right"
+            app:layout_constraintStart_toEndOf="@+id/button_up"
+            app:layout_constraintTop_toBottomOf="@+id/button_up" />
 
-  <Button
-      android:id="@+id/button_up"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="UP" />
+        <Button
+            android:id="@+id/button_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LEFT"
+            app:layout_constraintEnd_toStartOf="@+id/button_up"
+            app:layout_constraintTop_toBottomOf="@+id/button_up" />
 
-  <Button
-      android:id="@+id/button_down"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="DOWN" />
+        <Button
+            android:id="@+id/button_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:text="UP"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SV" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/button_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DOWN"
+            app:layout_constraintStart_toStartOf="@+id/button_up"
+            app:layout_constraintTop_toBottomOf="@+id/button_right" />
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
