@@ -11,15 +11,20 @@ import java.util.List;
 public class GameManager {
         Player player;
         Stage stage;
-        //private int stage_level;
+        private int stage_level;
 
         GameManager(){
             player = new Player();
             stage = new Stage(player,0);
         }
 
-        public boolean onUpdate(int x,int y) {
+        public boolean onUpdate() {
             stage.onUpdate();
+
+            if(stage.game_mode == Stage.GAMEMODE.STAGEUP){
+                stage_level++;
+                stage = new Stage(player,0);
+            }
             return true;
         }
 
