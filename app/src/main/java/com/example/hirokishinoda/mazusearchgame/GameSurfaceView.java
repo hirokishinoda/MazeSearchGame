@@ -37,7 +37,7 @@ public class GameSurfaceView  implements SurfaceHolder.Callback,Runnable,BottonT
     @Override
     public void run() {
         while(thread != null){
-            gm.onUpdate(0,0);
+            gm.onUpdate();
             draw(sv.getHolder());
         }
     }
