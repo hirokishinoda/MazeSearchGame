@@ -9,12 +9,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Stage extends Task{
+    public enum GAMEMODE{
+        GAMEOVER,
+        CONTINUE,
+        STAGEUP
+    }
+
     MazeMap map;
     ArrayList<Character> characters;
+    GAMEMODE game_mode;
 
     public Stage(Player player,int enemy_num){
         map = new MazeMap(41,41);
-
+        game_mode = GAMEMODE.CONTINUE;
         initCharacters(player,enemy_num);
     }
 
@@ -52,6 +59,11 @@ public class Stage extends Task{
     @Override
     public boolean onUpdate() {
         map.onUpdate();
+
+        Player player = (Player) characters.get(0);
+        if(player.character_x == map.goal_x && player.character_y == map.goal_y){
+            game_mode = GAMEMODE.STAGEUP;
+        }
         return true;
     }
 
