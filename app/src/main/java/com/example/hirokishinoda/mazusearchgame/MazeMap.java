@@ -12,6 +12,7 @@ import java.util.Random;
 public class MazeMap extends Task{
     Block [][]maze_map;
     int map_x,map_y;
+    int goal_x,goal_y;
 
     public  MazeMap(int map_x,int map_y){
         this.map_x = map_x;
@@ -101,18 +102,26 @@ public class MazeMap extends Task{
             case 0:
                 maze_map[1][1].setType(Block.blockType.START);
                 maze_map[map_y-2][map_x-2].setType(Block.blockType.GOAL);
+                goal_x = map_x -2;
+                goal_y = map_y -2;
                 break;
             case 1:
                 maze_map[1][map_x-2].setType(Block.blockType.START);
                 maze_map[map_y-2][1].setType(Block.blockType.GOAL);
+                goal_x = map_x -2;
+                goal_y = 1;
                 break;
             case 2:
                 maze_map[1][1].setType(Block.blockType.GOAL);
                 maze_map[map_y-2][map_x-2].setType(Block.blockType.START);
+                goal_x = 1;
+                goal_y = 1;
                 break;
             case 3:
                 maze_map[1][map_x-2].setType(Block.blockType.GOAL);
                 maze_map[map_y-2][1].setType(Block.blockType.START);
+                goal_x = map_x -2;
+                goal_y = 1;
                 break;
         }
     }
